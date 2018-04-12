@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Safari Diary</title>
+    <link rel="stylesheet" href="style.css">
+ 
+</head>
+<!--navigation bar -->
+     <body>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="summary.html">Project Summary</a></li>
+        </ul>
+<!--google map --> 
+    <div class="google map">
+        <h1 style=" color:blueviolet; font-family:Pacifico; text-align:center; font-size:70px;">Safari Diary</h1><br>
+        <script type="text/javascript" src="safari_diary.js"></script>
+        
+        <div id="map"></div>
+        <script>
+            function initMap(){
+                // map options
+                var options = {
+                    zoom:2,
+                    center:{lat:25.7617,lng:-80.1918}
+                }
+                // new map
+                var map = new google.maps.Map(document.getElementById('map'), options);
+                
+                /*
+                // add marker
+                var marker = new google.maps.Marker({
+                    position:{lat:25.7617,lng:-80.1918},
+                    map:map,
+                
+                });
+                
+                
+                var infoWindow = new google.maps.InfoWindow({
+                    content:'<a href="page1.html"><h3 style="text-align:center; color:#1D2786;">Check Miami Story</h3></a>'
+                    
+                });
+                
+                marker.addListener('click', function(){
+                    infoWindow.open(map, marker);     
+                });
+                */
+                
+                addMarker({lat:25.7617,lng:-80.1918, name:"Miami"});
+                addMarker({lat:41.9028,lng:12.4964, name:"Rome"});
+                addMarker({lat:31.2304,lng:121.4737, name:"Shanghai"});
+                
+                
+                // Add Marker Function
+                function addMarker(coords){
+                    var marker = new google.maps.Marker({
+                    position:coords,
+                    map:map,
+                
+                    });
+
+
+                     //Check content
+                     if(coords){
+                        var infoWindow = new google.maps.InfoWindow({
+                        content:`<a href="${coords.name}.html"> <h3 style="color:#6A65D8";>check ${coords.name} story</h3>`
+
+                    });
+
+                    marker.addListener('click', function(){
+                        infoWindow.open(map, marker);     
+                    });
+
+                }
+                    
+            }
+            
+            
+            }
+        </script>
+        <script async defer
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBdIqI54ChAzxLusWSxggkMCZqrKGfKj_s&callback=initMap">
+        </script>
+        
+    </div>  
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Miami Trip</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.css" integrity="sha256-oDCP2dNW17Y1QhBwQ+u2kLaKxoauWvIGks3a4as9QKs=" crossorigin="anonymous" />
+    <script type="text/javascript" src="..//Final%2520Project/safari%20diary.js"></script>
+</head>
+<body>
+<!--navigation bar -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="summary.html">Project Summary</a></li>
+        </ul>
+<!--banner and titile-->
+    <div class="banner">
+        <div class="centered"><h1 style="font-size: 120px; font-family:Pacifico; color:white; text-align: center;">Sunny, Sea, Hemingway</h1></div>
+        <img src="pictures/WechatIMG234.jpg" alt="Hemingway house" style="width: 100%;">
+        <!--The picture needs to be resized-->
+        <br><br>
+    </div> 
+      
+<!--introduction box-->      
+<div class="introduction">   
+    <!--Miami beach-->
+    <div class="ui three column grid">
+        <div class="column">
+            <div class="ui segment">
+            <img src="pictures/WechatIMG242.jpeg" style="width: 100%; height: 500px;">
+            <button class="ui purple button" onclick="openPopupMenu()">Read More</button>
+        </div>
+    </div>
+        <!--keywest-->
+        <div class="column">
+            <div class="ui segment">
+            <img src="">
+        </div>
+    </div>
+         <!--Hemingway-->
+        <div class="column">
+            <div class="ui segment">
+            <img>
+        </div>
+    </div>
+    </div>
+</div>  
+    
+      
+<!--popup box--> 
+<div id="popup_bg">
+    <div id="popup_main_div">
+        <div id="close_popup_div" onclick="closePopupMenu()">
+            <p>
+                X
+            </p>
+        </div>
+    </div>
+</div>
+    
+    
+<!--click button for popup js-->
+<script type="text/javascript">
+    var popupDiv = document.getElementById("popup_bg");
+    function openPopupMenu() {
+        popupDiv.style.display = "block";
+    }
+    function closePopupMenu() {
+        popupDiv.style.display = "none";
+    }
+</script>    
+    
+    
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.1/semantic.min.js"></script>
+</body>
+</html>
